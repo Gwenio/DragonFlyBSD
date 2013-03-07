@@ -67,6 +67,9 @@ PROF+=	-mprofiler-epilogue
 .endif
 .endif
 
+# Hyper-V
+INCLUDES+= -I$S/ -I$S/dev/hyperv/include -I$S/dev/hyperv/vmbus -I$S/dev/hyperv/netvsc
+
 # Put configuration-specific C flags last (except for ${PROF}) so that they
 # can override the others.
 CFLAGS+=	${CONF_CFLAGS}

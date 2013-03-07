@@ -1,0 +1,15 @@
+
+.PATH:  ${.CURDIR}/netvsc
+
+KMOD    = hv_netvsc
+
+SRCS    = hv_net_vsc.c \
+  hv_netvsc_drv_freebsd.c \
+	  hv_rndis_filter.c
+
+CFLAGS 	+= -I${.CURDIR}/include \
+	   -I${.CURDIR}/netvsc
+
+CFLAGS  += -fms-extensions -fformat-extensions ${.IMPSRC}
+
+.include <bsd.kmod.mk>
